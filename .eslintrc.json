@@ -6,11 +6,7 @@
       "parserOptions": {
         "project": "tsconfig.json"
       },
-      "plugins": [
-        "@typescript-eslint/eslint-plugin",
-        "simple-import-sort",
-        "unused-imports"
-      ],
+      "plugins": ["@typescript-eslint/eslint-plugin", "simple-import-sort", "unused-imports"],
       "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",

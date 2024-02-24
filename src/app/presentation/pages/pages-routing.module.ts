@@ -5,11 +5,11 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
   },
   {
     path: 'game',
-    loadChildren: () => import('./game/game.module').then((m) => m.GameModule),
+    loadChildren: () => import('./game/game.module').then(m => m.GameModule),
   },
 ];
 

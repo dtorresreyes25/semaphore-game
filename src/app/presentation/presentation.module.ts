@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PagesRoutingModule } from './pages/pages-routing.module';
 
-
-
 @NgModule({
   declarations: [],
-  imports: [
-    PagesRoutingModule
-  ]
+  imports: [PagesRoutingModule],
 })
-export class PresentationModule { }
+export class PresentationModule {}
