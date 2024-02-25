@@ -1,19 +1,23 @@
-import { ScoreModel } from '../model/score.model';
-
 export class PlayerEntity {
   public name!: string;
-  public score!: ScoreModel;
-  public maxScore!: ScoreModel;
+  public score!: number;
+  public maxScore!: number;
+
+  constructor(name: string) {
+    this.name = name;
+    this.score = 0;
+    this.maxScore = 0;
+  }
 
   public resetAllScore(): void {
-    this.score.value = 0;
+    this.score = 0;
   }
 
   public decreaseScoreByOne(): void {
-    this.score.value++;
+    this.score++;
   }
 
   public increaseScoreByOne(): void {
-    this.score.value--;
+    this.score--;
   }
 }

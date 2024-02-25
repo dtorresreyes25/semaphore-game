@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-
-import { HomeComponent } from './home.component';
-import { HomeRoutingModule } from './home-rounting.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from '../../shared/shared.module';
+import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
-import { MatButton, MatIconButton } from '@angular/material/button';
+
+import { SharedModule } from '../../shared/shared.module';
+import { HomeComponent } from './home.component';
+import { HomeRoutingModule } from './home-rounting.module';
 
 @NgModule({
   declarations: [HomeComponent],

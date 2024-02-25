@@ -1,6 +1,6 @@
-<mat-toolbar [color]="props?.backgroundColor" class="toolbar">
+<mat-toolbar [color]="props.backgroundColor" class="toolbar">
   <!--  TITLE-->
-  <span>{{ props?.title }}</span>
+  <span>{{ props.title }}</span>
   <!--  /TITLE-->
 
   <!--  SPACER-->
@@ -8,9 +8,9 @@
   <!--  /SPACER-->
 
   <!--  BUTTON-->
-  <div class="toolbar-button" (click)="props?.action()">
-    <mat-icon class="toolbar-icon">{{ props?.icon }}</mat-icon>
-    <h3 class="toolbar-text">{{ props?.label }}</h3>
+  <div class="toolbar-button" (click)="props.action()">
+    <mat-icon class="toolbar-icon">{{ props.icon }}</mat-icon>
+    <h3 class="toolbar-text">{{ props.label }}</h3>
   </div>
   <!--  /BUTTON -->
 </mat-toolbar>

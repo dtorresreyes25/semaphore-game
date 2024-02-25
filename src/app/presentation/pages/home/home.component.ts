@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 
+import { IHomeController } from '../../../controllers/home-controller/homeController.interface';
 import { FormFieldProps } from '../../shared/form-input/form-input.component';
 import { ToolbarProps } from '../../shared/toolbar/toolbar.component';
 
@@ -14,19 +15,25 @@ export class HomeComponent implements OnInit {
   public formProps!: FormFieldProps;
   public toolbarProps!: ToolbarProps;
 
+  public constructor(private homeController: IHomeController) {}
+
   ngOnInit(): void {
     this.setFormProps();
     this.setToolbarProps();
   }
 
-  private initForm(): void {
+  private get playerName(): AbstractControl {
+    return this.form.get('name') as AbstractControl;
+  }
+
+  private createForm(): void {
     this.form = new FormGroup({
       name: new FormControl('', [Validators.required]),
     });
   }
 
   private setFormProps = (): void => {
-    this.initForm();
+    this.createForm();
     this.formProps = { formGroup: this.form, controlName: 'name', required: true };
   };
 
@@ -41,5 +48,9 @@ export class HomeComponent implements OnInit {
 
   public handleOnNavigateToRankingPage(): void {}
 
-  public handleOnSubmit(): void {}
+  public handleJoinClick(): void {
+    if (this.playerName.valid) {
+      this.homeController.joinPlayer(this.playerName.value);
+    }
+  }
 }
