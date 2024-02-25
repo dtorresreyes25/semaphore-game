@@ -8,8 +8,6 @@ import { TrafficLightState } from '../../model/traffic-light-state.enum';
 export class WalkPlayerUsecase implements Usecase<Param<PlayerStepModel>, PlayerEntity> {
   private lastStep!: StepModel;
 
-  public constructor() {}
-
   public execute({ payload }: Param<PlayerStepModel>): PlayerEntity {
     const { step, player } = payload;
 
