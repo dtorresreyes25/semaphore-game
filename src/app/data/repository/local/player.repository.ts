@@ -1,7 +1,8 @@
-import { IPlayerRepository } from '../../../domain/interfaces/player-repository.interface';
-import { PlayerEntity } from '../../../domain/entities/player.entity';
-import { Observable, of } from 'rxjs';
 import { attempt, cloneDeep, isError } from 'lodash';
+import { Observable, of } from 'rxjs';
+
+import { PlayerEntity } from '../../../domain/entities/player.entity';
+import { IPlayerRepository } from '../../../domain/interfaces/player-repository.interface';
 
 const COLLECTION_NAME = 'trafficLight-game-players';
 

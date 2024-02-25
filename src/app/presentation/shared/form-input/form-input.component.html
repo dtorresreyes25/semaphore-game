@@ -1,0 +1,13 @@
+<mat-form-field color="primary" class="field" appearance="outline" [formGroup]="props?.formGroup!">
+  <!--  LABEL -->
+  <mat-label class="field-label">{{ props?.controlName }}</mat-label>
+  <!--  /LABEL-->
+
+  <!--  INPUT-->
+  <input matInput [placeholder]="'Enter ' + props?.controlName" [formControlName]="props?.controlName!" [required]="props?.required!" class="field-input" />
+  <!--  /INPUT-->
+
+  <!--  VALIDATION-->
+  <mat-error *ngIf="control.hasError?.('required')">The name is mandatory</mat-error>
+  <!--  /VALIDATION-->
+</mat-form-field>

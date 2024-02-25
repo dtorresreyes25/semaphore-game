@@ -1,0 +1,53 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  color: white;
+
+  &-card {
+    max-width: 85%;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  &-header,
+  &-actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-header {
+    align-items: center;
+    margin-bottom: 1.875rem;
+    flex-direction: column-reverse;
+  }
+
+  &-title {
+    font-size: 1.875rem;
+  }
+
+  &-icon {
+    background-color: #c888d4;
+    border-radius: 50%;
+    font-size: 2.0625rem;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.125rem;
+    height: 3.125rem;
+    margin-bottom: 0.9375rem;
+  }
+
+  &-actions {
+    padding: 0 1rem;
+    margin-top: 0.75rem;
+  }
+
+  &-button {
+    width: 100%;
+  }
+}

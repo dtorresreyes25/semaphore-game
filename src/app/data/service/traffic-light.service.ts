@@ -1,6 +1,7 @@
+import { concat, first, interval, map, Observable, repeat } from 'rxjs';
+
 import { ITrafficLight } from '../../domain/interfaces/traffic-light.interface';
 import { TrafficLightIntervalsModel } from '../../domain/model/traffic-light-intervals.model';
-import { concat, first, interval, map, Observable, repeat } from 'rxjs';
 import { TrafficLightState } from '../../domain/model/traffic-light-state.enum';
 
 export class TrafficLightService implements ITrafficLight {

@@ -1,0 +1,11 @@
+.button {
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 1.375rem;
+  height: 3.75rem;
+  border-radius: 0.5rem;
+
+  &:active, &:hover {
+    background: #c888d4;
+  }
+}
