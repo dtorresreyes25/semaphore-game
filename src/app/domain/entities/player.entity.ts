@@ -1,23 +1,29 @@
 export class PlayerEntity {
-  public name!: string;
-  public score!: number;
-  public maxScore!: number;
-
-  constructor(name: string) {
-    this.name = name;
-    this.score = 0;
-    this.maxScore = 0;
-  }
+  constructor(
+    public name: string,
+    public score = 0,
+    public maxScore = 0
+  ) {}
 
   public resetAllScore(): void {
     this.score = 0;
   }
 
   public decreaseScoreByOne(): void {
-    this.score++;
+    if (this.score > 0) {
+      this.score--;
+    }
   }
 
   public increaseScoreByOne(): void {
-    this.score--;
+    this.score++;
+
+    if (this.score >= this.maxScore) {
+      this.increaseMaxScoreByOne();
+    }
+  }
+
+  public increaseMaxScoreByOne(): void {
+    this.maxScore++;
   }
 }

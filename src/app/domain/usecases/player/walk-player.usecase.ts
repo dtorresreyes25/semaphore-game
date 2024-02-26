@@ -1,47 +1,52 @@
+import { Injectable } from '@angular/core';
+
+import { PlayerEntity } from '../../entities/player.entity';
 import { Usecase } from '../../interfaces/usecase.interface';
 import { Param } from '../../model/param.payload';
-import { StepModel } from '../../model/step.model';
 import { PlayerStepModel } from '../../model/player-step.model';
-import { PlayerEntity } from '../../entities/player.entity';
-import { TrafficLightState } from '../../model/traffic-light-state.enum';
+import { SemaphoreState } from '../../model/semaphore-state.enum';
+import { StepModel } from '../../model/step.model';
 
+@Injectable()
 export class WalkPlayerUsecase implements Usecase<Param<PlayerStepModel>, PlayerEntity> {
   private lastStep!: StepModel;
 
-  public execute({ payload }: Param<PlayerStepModel>): PlayerEntity {
+  public execute = ({ payload }: Param<PlayerStepModel>): PlayerEntity => {
     const { step, player } = payload;
 
-    this.updatePlayerScoreByTrafficLightState(payload);
+    this.updatePlayerScoreBySemaphoreState(payload);
     this.rememberStep(step);
 
     return player;
-  }
+  };
 
-  private updatePlayerScoreByTrafficLightState(payload: PlayerStepModel): void {
+  private updatePlayerScoreBySemaphoreState = (payload: PlayerStepModel): void => {
     const operations = this.getOperationListByTrafficLightState();
-    const operationByTrafficLightState = operations.get(payload.trafficLightState);
+    const operationBySemaphoreState = operations.get(payload.semaphoreState);
 
-    operationByTrafficLightState?.(payload);
-  }
+    operationBySemaphoreState?.(payload);
+  };
 
-  private getOperationListByTrafficLightState(): Map<TrafficLightState, (payload: PlayerStepModel) => void> {
+  private getOperationListByTrafficLightState(): Map<SemaphoreState, (payload: PlayerStepModel) => void> {
     return new Map([
-      [TrafficLightState.RED, this.resetScore],
-      [TrafficLightState.GREEN, this.updateScoreByOne],
+      [SemaphoreState.RED, this.resetScore],
+      [SemaphoreState.GREEN, this.updateScoreByOne],
     ]);
   }
 
-  private resetScore({ player }: PlayerStepModel): void {
-    player.resetAllScore();
-  }
+  private resetScore = ({ player }: PlayerStepModel): void => {
+    if (player.score) {
+      player.resetAllScore();
+    }
+  };
 
-  private updateScoreByOne({ player, step }: PlayerStepModel): void {
+  private updateScoreByOne = ({ player, step }: PlayerStepModel): void => {
     this.isCurrentStepEqualToLastOne(step) ? player.decreaseScoreByOne() : player.increaseScoreByOne();
-  }
+  };
 
-  private isCurrentStepEqualToLastOne(step: StepModel): boolean {
-    return step.foot === this.lastStep.foot;
-  }
+  private isCurrentStepEqualToLastOne = (step: StepModel): boolean => {
+    return step.foot === this.lastStep?.foot;
+  };
 
   private rememberStep(step: StepModel): void {
     this.lastStep = step;

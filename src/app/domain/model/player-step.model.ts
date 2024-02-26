@@ -1,9 +1,11 @@
-import { TrafficLightState } from './traffic-light-state.enum';
-import { StepModel } from './step.model';
 import { PlayerEntity } from '../entities/player.entity';
+import { SemaphoreState } from './semaphore-state.enum';
+import { StepModel } from './step.model';
 
 export class PlayerStepModel {
-  public step!: StepModel;
-  public player!: PlayerEntity;
-  public trafficLightState!: TrafficLightState;
+  public constructor(
+    public step: StepModel,
+    public player: PlayerEntity,
+    public semaphoreState: SemaphoreState
+  ) {}
 }

@@ -1,17 +1,17 @@
-import { CommonModule } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
 
 import { SharedModule } from '../../shared/shared.module';
-import { GameComponent } from './game.component';
-import { GameRoutingModule } from './game-routing.module';
+import { PlayComponent } from './play.component';
+import { PlayRoutingModule } from './play-routing.module';
 
 @NgModule({
-  declarations: [GameComponent],
+  declarations: [PlayComponent],
   imports: [
     CommonModule,
-    GameRoutingModule,
+    PlayRoutingModule,
     MatCard,
     MatCardActions,
     MatCardContent,
@@ -19,6 +19,7 @@ import { GameRoutingModule } from './game-routing.module';
     MatCardTitle,
     MatIcon,
     SharedModule,
+    AsyncPipe,
   ],
 })
-export class GameModule {}
+export class PlayModule {}

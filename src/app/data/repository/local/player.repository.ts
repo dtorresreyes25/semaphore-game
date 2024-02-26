@@ -5,11 +5,9 @@ import { Observable, of } from 'rxjs';
 import { PlayerEntity } from '../../../domain/entities/player.entity';
 import { IPlayerRepository } from '../../../domain/interfaces/player-repository.interface';
 
-const COLLECTION_NAME = 'trafficLight-game-players';
+const COLLECTION_NAME = 'semaphore-game-players';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class PlayerRepository implements IPlayerRepository {
   private entities: PlayerEntity[] = [];
   private localStorage: Storage = window.localStorage;

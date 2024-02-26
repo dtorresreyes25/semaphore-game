@@ -6,7 +6,7 @@ import { PlayerEntity } from '../../domain/entities/player.entity';
 import { Param } from '../../domain/model/param.payload';
 import { CreatePlayerUsecase } from '../../domain/usecases/player/create-player.usecase';
 import { GetOnePlayerUsecase } from '../../domain/usecases/player/get-one-player.usecase';
-import { IHomeController } from './homeController.interface';
+import { IHomeController } from './home-controller.interface';
 
 @Injectable()
 export class HomeControllerService implements IHomeController {
@@ -25,7 +25,7 @@ export class HomeControllerService implements IHomeController {
         })
       )
       .subscribe(player => {
-        this.router.navigate(['game'], {
+        this.router.navigateByUrl('play', {
           state: {
             player,
           },

@@ -1,0 +1,25 @@
+<section class="game">
+  <!--SCORE-->
+  <p class="game-score">Max Score: {{ player?.maxScore || 0 }}</p>
+  <!--/SCORE-->
+
+  <!--SEMAPHORE-->
+  <mat-icon class="game-semaphore" [class.game-semaphore--green]="isCurrentLightGreen" fontIcon="traffic-light" />
+  <!--  /SEMAPHORE -->
+
+  <!--MAX SCORE-->
+  <p class="game-score">Score: {{ player?.score || 0 }}</p>
+  <!--/MAX SCORE-->
+
+  <div class="game-buttons">
+    <!--LEFT BUTTON-->
+    <app-button class="game-button" icon="barefoot" (click)="handleStepClick({ foot: FootSide.LEFT })">left</app-button>
+    <!--/LEFT BUTTON-->
+
+    <!--RIGHT BUTTON-->
+    <app-button class="game-button" icon="barefoot" (click)="handleStepClick({ foot: FootSide.RIGHT })"
+      >right</app-button
+    >
+    <!--/RIGHT BUTTON-->
+  </div>
+</section>

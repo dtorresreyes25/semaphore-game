@@ -1,4 +1,4 @@
-export enum TrafficLightState {
+export enum SemaphoreState {
   RED = 'red',
   GREEN = 'green',
 }

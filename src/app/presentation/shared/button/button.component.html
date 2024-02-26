@@ -1,9 +1,9 @@
 <button mat-raised-button color="{{ color }}" [disabled]="disabled" class="button">
-  <!--  ICON-->
-  <mat-icon *ngIf="icon">{{ icon }}</mat-icon>
-  <!--  /ICON-->
+  <!--ICON-->
+  <mat-icon *ngIf="icon" [fontIcon]="icon"></mat-icon>
+  <!--/ICON-->
 
-  <!--  CONTENT-->
+  <!--CONTENT-->
   <ng-content></ng-content>
-  <!--  /CONTENT-->
+  <!--/CONTENT-->
 </button>

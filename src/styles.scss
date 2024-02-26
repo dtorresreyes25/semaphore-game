@@ -10,20 +10,18 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 
   --mdc-protected-button-disabled-label-text-color: #424242;
-  --mdc-protected-button-disabled-container-color : #b3e5fc;
-
+  --mdc-protected-button-disabled-container-color: #b3e5fc;
   --mdc-outlined-text-field-label-text-color: #85c1f8;
   --mdc-outlined-text-field-input-text-color: white;
-
   --mdc-outlined-text-field-outline-color: #85c1f8;
   --mdc-outlined-text-field-hover-outline-color: #c888d4;
   --mdc-outlined-text-field-hover-label-text-color: #c888d4;
-
   --mdc-outlined-text-field-focus-outline-color: #c888d4;
   --mdc-outlined-text-field-focus-label-text-color: #c888d4;
+  --mdc-protected-button-container-color: #85c1f8;
 }
 
-.mat-app-background{
+.mat-app-background {
   background-color: black;
 }
 
@@ -60,7 +58,7 @@ $blue-palette: (
     A200: $dark-primary-text,
     A400: $dark-primary-text,
     A700: $light-primary-text,
-  )
+  ),
 );
 
 $grey-palette: (
@@ -93,9 +91,8 @@ $grey-palette: (
     A200: $dark-primary-text,
     A400: $dark-primary-text,
     A700: $light-primary-text,
-  )
+  ),
 );
-
 
 $my-primary: mat.define-palette($blue-palette, 200);
 $my-accent: mat.define-palette($grey-palette, 900);
@@ -112,3 +109,20 @@ $my-theme: mat.define-light-theme(
 
 @include mat.core-theme($my-theme);
 @include mat.all-component-themes($my-theme);
+
+.game-buttons {
+  app-button {
+    &:first-child {
+      .button {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+      }
+    }
+    &:last-child {
+      .button {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+      }
+    }
+  }
+}

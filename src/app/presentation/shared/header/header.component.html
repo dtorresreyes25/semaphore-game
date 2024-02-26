@@ -1,18 +1,18 @@
-<mat-toolbar class="header" [ngClass]="{ 'header--highlighted': props?.playerName }">
-  <!--  NAME -->
+<mat-toolbar class="header" [ngClass]="{ 'header--highlighted': props.playerName }">
+  <!--NAME-->
   <ng-container *ngIf="props?.playerName as name">
     <span class="header-name">Hi {{ name }}</span>
   </ng-container>
-  <!--  /NAME -->
+  <!--/NAME-->
 
-  <!--  SPACER -->
+  <!--SPACER-->
   <span class="header-spacer"></span>
-  <!--  /SPACER -->
+  <!--/SPACER-->
 
-  <!--  BUTTON -->
+  <!--BUTTON-->
   <div class="header-button" (click)="props.action()">
     <mat-icon class="header-icon">{{ props.icon }}</mat-icon>
-    <h3 class="header-text">{{ props?.label }}</h3>
+    <h3 class="header-text">{{ props.label }}</h3>
   </div>
-  <!--  /BUTTON -->
+  <!--/BUTTON-->
 </mat-toolbar>

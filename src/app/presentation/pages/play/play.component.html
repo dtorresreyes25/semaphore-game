@@ -1,0 +1,11 @@
+<!--HEADER-->
+<section class="play-header">
+  <app-header [props]="headerProps"> </app-header>
+</section>
+<!--/HEADER-->
+
+<!--GAME-->
+<section class="play-game">
+  <app-game [light]="semaphoreLight" [player]="player" (stepChanged)="handleStepChanged($event)"></app-game>
+</section>
+<!--/GAME-->

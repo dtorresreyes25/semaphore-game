@@ -1,20 +1,28 @@
+<!--TOOLBAR-->
 <section class="home-toolbar">
   <app-header [props]="headerProps" />
 </section>
+<!--/TOOLBAR-->
 
 <section class="home">
   <mat-card class="home-card">
+    <!--HEADER-->
     <mat-card-header class="home-header">
       <mat-icon class="home-icon">mouse</mat-icon>
       <mat-card-title class="home-title"> Create new player</mat-card-title>
     </mat-card-header>
+    <!--/HEADER-->
 
+    <!--INPUT-->
     <mat-card-content>
       <app-form-input [props]="formProps"></app-form-input>
     </mat-card-content>
+    <!--INPUT-->
 
+    <!--JOIN BUTTON-->
     <mat-card-actions class="home-actions">
       <app-button class="home-button" [disabled]="form.invalid" (click)="handleJoinClick()">join</app-button>
     </mat-card-actions>
+    <!--/JOIN BUTTON-->
   </mat-card>
 </section>

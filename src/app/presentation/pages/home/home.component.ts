@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { IHomeController } from '../../../controllers/home-controller/homeController.interface';
+import { IHomeController } from '../../../controllers/home-controller/home-controller.interface';
 import { FormFieldProps } from '../../shared/form-input/form-input.component';
 import { HeaderProps } from '../../shared/header/header.component';
 

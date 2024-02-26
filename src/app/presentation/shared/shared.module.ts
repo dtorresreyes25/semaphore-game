@@ -9,10 +9,11 @@ import { MatToolbar } from '@angular/material/toolbar';
 
 import { ButtonComponent } from './button/button.component';
 import { FormInputComponent } from './form-input/form-input.component';
+import { GameComponent } from './game/game.component';
 import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [ButtonComponent, FormInputComponent, HeaderComponent],
+  declarations: [ButtonComponent, FormInputComponent, HeaderComponent, GameComponent],
   imports: [
     CommonModule,
     MatFormField,
@@ -25,6 +26,6 @@ import { HeaderComponent } from './header/header.component';
     MatToolbar,
     MatIconButton,
   ],
-  exports: [ButtonComponent, FormInputComponent, HeaderComponent],
+  exports: [ButtonComponent, FormInputComponent, HeaderComponent, GameComponent],
 })
 export class SharedModule {}
