@@ -3,7 +3,7 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 
 import { IHomeController } from '../../../controllers/home-controller/homeController.interface';
 import { FormFieldProps } from '../../shared/form-input/form-input.component';
-import { ToolbarProps } from '../../shared/toolbar/toolbar.component';
+import { HeaderProps } from '../../shared/header/header.component';
 
 @Component({
   selector: 'app-home',
@@ -13,13 +13,13 @@ import { ToolbarProps } from '../../shared/toolbar/toolbar.component';
 export class HomeComponent implements OnInit {
   public form!: FormGroup;
   public formProps!: FormFieldProps;
-  public toolbarProps!: ToolbarProps;
+  public headerProps!: HeaderProps;
 
   public constructor(private homeController: IHomeController) {}
 
   ngOnInit(): void {
     this.setFormProps();
-    this.setToolbarProps();
+    this.setHeaderProps();
   }
 
   private get playerName(): AbstractControl {
@@ -37,11 +37,10 @@ export class HomeComponent implements OnInit {
     this.formProps = { formGroup: this.form, controlName: 'name', required: true };
   };
 
-  private setToolbarProps = (): void => {
-    this.toolbarProps = {
-      icon: 'leaderboard',
+  private setHeaderProps = (): void => {
+    this.headerProps = {
       label: 'Ranking',
-      backgroundColor: 'accent',
+      icon: 'leaderboard',
       action: this.handleOnNavigateToRankingPage,
     };
   };

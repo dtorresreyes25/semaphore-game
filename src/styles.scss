@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 @use '@angular/material' as mat;
 @include mat.core();
 
@@ -11,7 +10,7 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 
   --mdc-protected-button-disabled-label-text-color: #424242;
-  --mdc-protected-button-disabled-container-color : #9e9e9e;
+  --mdc-protected-button-disabled-container-color : #b3e5fc;
 
   --mdc-outlined-text-field-label-text-color: #85c1f8;
   --mdc-outlined-text-field-input-text-color: white;
@@ -74,7 +73,7 @@ $grey-palette: (
   600: #757575,
   700: #616161,
   800: #424242,
-  900: black,
+  900: #222222,
   A100: #ffffff,
   A200: #eeeeee,
   A400: #bdbdbd,

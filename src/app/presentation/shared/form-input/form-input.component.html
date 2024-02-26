@@ -4,10 +4,15 @@
   <!--  /LABEL-->
 
   <!--  INPUT-->
-  <input matInput [placeholder]="'Enter ' + props?.controlName" [formControlName]="props?.controlName!" [required]="props?.required!" class="field-input" />
+  <input
+    matInput
+    [placeholder]="'Enter ' + props?.controlName"
+    [formControlName]="props?.controlName!"
+    [required]="props?.required!"
+    class="field-input" />
   <!--  /INPUT-->
 
   <!--  VALIDATION-->
-  <mat-error *ngIf="control.hasError?.('required')">The name is mandatory</mat-error>
+  <mat-error *ngIf="control.hasError?.('required')" class="field-error">The name is mandatory</mat-error>
   <!--  /VALIDATION-->
 </mat-form-field>
