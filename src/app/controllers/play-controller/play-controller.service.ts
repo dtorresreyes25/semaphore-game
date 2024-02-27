@@ -61,11 +61,18 @@ export class PlayControllerService implements IPlayController {
   public walkPlayer(playerStep: PlayerStepModel): void {
     if (playerStep.semaphoreState === SemaphoreState.RED && playerStep.player.score) {
       this.musicService.playErrorSound();
+      this.vibratePhone();
     }
     this.player$.next(this.walkPlayerUsecase.execute(new Param(playerStep)));
   }
 
   public savePlayer(player: PlayerEntity): void {
     this.savePlayerUsecase.execute(new Param(player));
+  }
+
+  private vibratePhone(): void {
+    'vibrate' in navigator
+      ? navigator.vibrate(200)
+      : console.log('La vibración no es compatible en este dispositivo/navegador.');
   }
 }
