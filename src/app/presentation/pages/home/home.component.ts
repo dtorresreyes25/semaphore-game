@@ -43,8 +43,7 @@ export class HomeComponent implements OnInit {
 
   private setHeaderProps = (): void => {
     this.headerProps = {
-      label: 'Ranking',
-      icon: 'leaderboard',
+      icon: 'ranking-cup',
       action: this.navigateToRankingPage,
     };
   };

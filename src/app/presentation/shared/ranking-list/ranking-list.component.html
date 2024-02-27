@@ -3,9 +3,8 @@
   <h2 class="ranking-header">Rankings</h2>
   <!--/HEADER-->
 
-  <!--RANKING-->
-
   <ul class="ranking-list">
+    <!--RANKINGS-->
     <ng-container *ngIf="rankings?.length; else message">
       <li class="ranking-item" *ngFor="let rank of rankings">
         <div class="ranking-rank">
@@ -15,10 +14,12 @@
         <span>{{ rank.maxScore }}</span>
       </li>
     </ng-container>
+    <!--/RANKINGS-->
 
+    <!--NO RANKING MESSAGE-->
     <ng-template #message>
       <li>No rankings yet!</li>
     </ng-template>
+    <!--NO RANKING MESSAGE-->
   </ul>
-  <!--/RANKING-->
 </section>

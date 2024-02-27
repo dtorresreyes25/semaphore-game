@@ -88,9 +88,21 @@ export class AppComponent {
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer
   ) {
-    this.matIconRegistry.addSvgIcon(
-      'shoe-prints',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/svg/shoe-prints.svg')
-    );
+    const iconUrls = [
+      'assets/svg/arrow-right.svg',
+      'assets/svg/computer-mouse.svg',
+      'assets/svg/shoe-prints.svg',
+      'assets/svg/ranking-cup.svg',
+      'assets/svg/semaphore.svg',
+    ];
+
+    iconUrls.forEach((iconUrl: string) => {
+      const iconName = iconUrl.split('/').pop()?.split('.')[0];
+      const sanitizedUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(iconUrl);
+
+      if (iconName && sanitizedUrl) {
+        this.matIconRegistry.addSvgIcon(iconName, sanitizedUrl);
+      }
+    });
   }
 }

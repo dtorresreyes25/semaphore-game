@@ -11,7 +11,7 @@
 
   <!--BUTTON-->
   <div class="header-button" (click)="props.action()">
-    <mat-icon class="header-icon">{{ props.icon }}</mat-icon>
+    <mat-icon class="header-icon" [svgIcon]="props.icon" />
     <h3 class="header-text">{{ props.label }}</h3>
   </div>
   <!--/BUTTON-->

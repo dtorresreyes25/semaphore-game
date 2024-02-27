@@ -31,7 +31,7 @@ export class RankingComponent implements OnInit {
 
   private setHeaderProps = (): void => {
     this.headerProps = {
-      icon: 'logout',
+      icon: 'arrow-right',
       action: () => this.navigateHome(),
     };
   };
