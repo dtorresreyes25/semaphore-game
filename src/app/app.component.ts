@@ -8,7 +8,6 @@ import { PlayControllerService } from './controllers/play-controller/play-contro
 import { IRankingController } from './controllers/ranking-controller/ranking-controller.interface';
 import { RankingControllerService } from './controllers/ranking-controller/ranking-controller.service';
 import { PlayerRepository } from './data/repository/local/player.repository';
-import { SemaphoreService } from './data/service/semaphore.service';
 import { DomainModule } from './domain/domain.module';
 import { IPlayerRepository } from './domain/interfaces/player-repository.interface';
 import { ISemaphore } from './domain/interfaces/semaphore.interface';
@@ -19,12 +18,15 @@ import { SavePlayerUsecase } from './domain/usecases/player/save-player.usecase'
 import { WalkPlayerUsecase } from './domain/usecases/player/walk-player.usecase';
 import { StartSemaphoreUsecase } from './domain/usecases/semaphore/start-semaphore.usecase';
 import { PresentationModule } from './presentation/presentation.module';
+import { MusicService } from './services/music/music.service';
+import { SemaphoreService } from './services/semaphore/semaphore.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, DomainModule, PresentationModule],
   providers: [
+    MusicService,
     {
       provide: IPlayerRepository,
       useClass: PlayerRepository,
