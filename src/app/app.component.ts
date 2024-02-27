@@ -1,4 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
 
 import { IHomeController } from './controllers/home-controller/home-controller.interface';
@@ -24,9 +27,10 @@ import { SemaphoreService } from './services/semaphore/semaphore.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, DomainModule, PresentationModule],
+  imports: [RouterOutlet, DomainModule, PresentationModule, HttpClientModule],
   providers: [
     MusicService,
+    MatIconRegistry,
     {
       provide: IPlayerRepository,
       useClass: PlayerRepository,
@@ -79,4 +83,14 @@ import { SemaphoreService } from './services/semaphore/semaphore.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
+    this.matIconRegistry.addSvgIcon(
+      'shoe-prints',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/svg/shoe-prints.svg')
+    );
+  }
+}

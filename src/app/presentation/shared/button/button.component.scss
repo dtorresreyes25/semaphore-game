@@ -8,4 +8,15 @@
   &:active, &:hover {
     background: #c888d4;
   }
+
+  &-icon {
+    transform: rotate(270deg);
+  }
+}
+
+#button-icon {
+  transform: rotate(270deg);
+  font-size: 23px;
+  height: 2.125rem;
+  width: 2.125rem;
 }
