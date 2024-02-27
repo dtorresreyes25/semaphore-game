@@ -4,15 +4,21 @@
   <!--/HEADER-->
 
   <!--RANKING-->
-  <ul class="ranking-list">
-    <li class="ranking-item" *ngFor="let rank of rankings">
-      <div class="ranking-rank">
-        <mat-icon class="ranking-star">star</mat-icon>
-        <span>{{ rank.name }}</span>
-      </div>
 
-      <span>{{ rank.maxScore }}</span>
-    </li>
+  <ul class="ranking-list">
+    <ng-container *ngIf="rankings?.length; else message">
+      <li class="ranking-item" *ngFor="let rank of rankings">
+        <div class="ranking-rank">
+          <mat-icon class="ranking-star">star</mat-icon>
+          <span>{{ rank.name }}</span>
+        </div>
+        <span>{{ rank.maxScore }}</span>
+      </li>
+    </ng-container>
+
+    <ng-template #message>
+      <li>No rankings yet!</li>
+    </ng-template>
   </ul>
   <!--/RANKING-->
 </section>
