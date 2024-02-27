@@ -47,11 +47,17 @@ export class PlayControllerService implements IPlayController {
     return this.semaphoreService.startTimer().pipe(
       distinctUntilChanged(),
       tap(semaphoreState => {
-        semaphoreState === SemaphoreState.GREEN
-          ? this.musicService.playBackgroundMusic()
-          : this.musicService.pauseBackgroundMusic();
+        semaphoreState === SemaphoreState.GREEN ? this.playBackgroundMusic() : this.pauseBackgroundMusic();
       })
     );
+  }
+
+  public pauseBackgroundMusic(): void {
+    this.musicService.pauseBackgroundMusic();
+  }
+
+  private playBackgroundMusic(): void {
+    this.musicService.playBackgroundMusic();
   }
 
   public startGame(player: PlayerEntity): void {

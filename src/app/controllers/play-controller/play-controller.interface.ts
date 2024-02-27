@@ -9,4 +9,5 @@ export abstract class IPlayController {
   abstract savePlayer(player: PlayerEntity): void;
   abstract walkPlayer(player: PlayerStepModel): void;
   abstract startSemaphore(): Observable<SemaphoreState>;
+  abstract pauseBackgroundMusic(): void;
 }

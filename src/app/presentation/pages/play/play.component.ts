@@ -63,6 +63,7 @@ export class PlayComponent implements OnInit {
 
   private navigateHome(): void {
     this.router.navigate(['']);
+    this.playController.pauseBackgroundMusic();
   }
 
   public handleStepChanged(step: StepModel): void {
