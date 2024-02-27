@@ -94,6 +94,7 @@ export class AppComponent {
       'assets/svg/shoe-prints.svg',
       'assets/svg/ranking-cup.svg',
       'assets/svg/semaphore.svg',
+      'assets/svg/star.svg',
     ];
 
     iconUrls.forEach((iconUrl: string) => {

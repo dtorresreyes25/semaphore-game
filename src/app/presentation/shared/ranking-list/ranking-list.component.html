@@ -8,7 +8,7 @@
     <ng-container *ngIf="rankings?.length; else message">
       <li class="ranking-item" *ngFor="let rank of rankings">
         <div class="ranking-rank">
-          <mat-icon class="ranking-star">star</mat-icon>
+          <mat-icon class="ranking-star" svgIcon="star" />
           <span>{{ rank.name }}</span>
         </div>
         <span>{{ rank.maxScore }}</span>
