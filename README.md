@@ -1,27 +1,37 @@
-# App
+# Semaphore Game
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
+App móvil web progresiva basada en el juego Red Light, Green Light
 
-## Development server
+## Requisitos Previos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Antes de comenzar, asegúrate de tener instalados en tu sistema:
 
-## Code scaffolding
+- [Node.js](https://nodejs.org/) (versión recomendada: LTS)
+- [npm](https://www.npmjs.com/) (viene incluido con Node.js)
+- [Angular CLI](https://angular.io/cli) (instálalo globalmente con `npm install -g @angular/cli`)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instalación
 
-## Build
+1. Clona el repositorio:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    ```bash
+    git clone https://github.com/dtorresreyes25/traffic-light-game.git
+    cd traffic-light-game
+    ```
 
-## Running unit tests
+2. Instala las dependencias:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ```bash
+    npm install
+    ```
 
-## Running end-to-end tests
+## Configuración
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Asegúrate de revisar y ajustar cualquier configuración necesaria antes de ejecutar la aplicación.
 
-## Further help
+## Ejecución Local
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Ejecuta el siguiente comando para iniciar el servidor de desarrollo:
+
+```bash
+ng serve
