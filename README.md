@@ -1,6 +1,6 @@
 # Semaphore Game
 
-App móvil web progresiva basada en el juego Red Light, Green Light
+App móvil web progresiva basada en el juego Red Light, Green Light.
 
 ## Requisitos Previos
 
@@ -15,8 +15,8 @@ Antes de comenzar, asegúrate de tener instalados en tu sistema:
 1. Clona el repositorio:
 
     ```bash
-    git clone https://github.com/dtorresreyes25/traffic-light-game.git
-    cd traffic-light-game
+    git clone git@github.com:dtorresreyes25/semaphore-game.git
+    cd semaphore-game
     ```
 
 2. Instala las dependencias:
@@ -24,10 +24,6 @@ Antes de comenzar, asegúrate de tener instalados en tu sistema:
     ```bash
     npm install
     ```
-
-## Configuración
-
-Asegúrate de revisar y ajustar cualquier configuración necesaria antes de ejecutar la aplicación.
 
 ## Ejecución Local
 
