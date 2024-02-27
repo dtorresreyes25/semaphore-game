@@ -4,8 +4,8 @@ import { Observable, of, switchMap } from 'rxjs';
 
 import { PlayerEntity } from '../../domain/entities/player.entity';
 import { Param } from '../../domain/model/param.payload';
-import { CreatePlayerUsecase } from '../../domain/usecases/player/create-player.usecase';
-import { GetOnePlayerUsecase } from '../../domain/usecases/player/get-one-player.usecase';
+import { CreatePlayerUsecase } from '../../domain/usecases/player/create-player/create-player.usecase';
+import { GetOnePlayerUsecase } from '../../domain/usecases/player/get-one-player/get-one-player.usecase';
 import { IHomeController } from './home-controller.interface';
 
 @Injectable()

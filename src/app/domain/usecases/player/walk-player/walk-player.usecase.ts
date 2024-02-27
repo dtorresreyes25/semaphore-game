@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 
-import { PlayerEntity } from '../../entities/player.entity';
-import { Usecase } from '../../interfaces/usecase.interface';
-import { Param } from '../../model/param.payload';
-import { PlayerStepModel } from '../../model/player-step.model';
-import { SemaphoreState } from '../../model/semaphore-state.enum';
-import { StepModel } from '../../model/step.model';
+import { PlayerEntity } from '../../../entities/player.entity';
+import { Usecase } from '../../../interfaces/usecase.interface';
+import { Param } from '../../../model/param.payload';
+import { PlayerStepModel } from '../../../model/player-step.model';
+import { SemaphoreState } from '../../../model/semaphore-state.enum';
+import { StepModel } from '../../../model/step.model';
 
 @Injectable()
 export class WalkPlayerUsecase implements Usecase<Param<PlayerStepModel>, PlayerEntity> {

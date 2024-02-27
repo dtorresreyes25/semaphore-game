@@ -33,7 +33,7 @@ export class PlayComponent implements OnInit {
     this.startGame();
   }
 
-  private startSemaphore(): void {
+  public startSemaphore(): void {
     this.playController
       .startSemaphore()
       .pipe(takeUntilDestroyed(this.destroyRef))
@@ -42,7 +42,7 @@ export class PlayComponent implements OnInit {
       });
   }
 
-  private startGame(): void {
+  public startGame(): void {
     this.playController.startGame(this.player);
   }
 
@@ -62,7 +62,7 @@ export class PlayComponent implements OnInit {
   }
 
   private navigateHome(): void {
-    this.router.navigate(['']);
+    this.router.navigate(['/home']);
     this.playController.pauseBackgroundMusic();
   }
 
@@ -73,10 +73,10 @@ export class PlayComponent implements OnInit {
     this.playController.savePlayer(this.player);
   }
 
-  private setHeaderProps = (): void => {
+  public setHeaderProps = (): void => {
     this.headerProps = {
-      icon: 'logout',
-      playerName: this.player.name,
+      icon: 'arrow-right',
+      playerName: this.player?.name,
       action: () => this.navigateHome(),
     };
   };

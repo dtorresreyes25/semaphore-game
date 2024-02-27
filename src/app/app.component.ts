@@ -14,12 +14,12 @@ import { PlayerRepository } from './data/repository/local/player.repository';
 import { DomainModule } from './domain/domain.module';
 import { IPlayerRepository } from './domain/interfaces/player-repository.interface';
 import { ISemaphore } from './domain/interfaces/semaphore.interface';
-import { CreatePlayerUsecase } from './domain/usecases/player/create-player.usecase';
-import { GetManyPlayersUsecase } from './domain/usecases/player/get-many-players.usecase';
-import { GetOnePlayerUsecase } from './domain/usecases/player/get-one-player.usecase';
-import { SavePlayerUsecase } from './domain/usecases/player/save-player.usecase';
-import { WalkPlayerUsecase } from './domain/usecases/player/walk-player.usecase';
-import { StartSemaphoreUsecase } from './domain/usecases/semaphore/start-semaphore.usecase';
+import { CreatePlayerUsecase } from './domain/usecases/player/create-player/create-player.usecase';
+import { GetManyPlayersUsecase } from './domain/usecases/player/get-many-players/get-many-players.usecase';
+import { GetOnePlayerUsecase } from './domain/usecases/player/get-one-player/get-one-player.usecase';
+import { SavePlayerUsecase } from './domain/usecases/player/save-player/save-player.usecase';
+import { WalkPlayerUsecase } from './domain/usecases/player/walk-player/walk-player.usecase';
+import { CalculateLightIntervalsUsecase } from './domain/usecases/semaphore/calculate-light-intervals/calculate-light-intervals.usecase';
 import { PresentationModule } from './presentation/presentation.module';
 import { MusicService } from './services/music/music.service';
 import { SemaphoreService } from './services/semaphore/semaphore.service';
@@ -52,8 +52,8 @@ import { SemaphoreService } from './services/semaphore/semaphore.service';
       useClass: PlayControllerService,
     },
     {
-      provide: StartSemaphoreUsecase,
-      useFactory: () => new StartSemaphoreUsecase(),
+      provide: CalculateLightIntervalsUsecase,
+      useFactory: () => new CalculateLightIntervalsUsecase(),
     },
     {
       provide: WalkPlayerUsecase,

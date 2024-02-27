@@ -8,9 +8,9 @@ import { Param } from '../../domain/model/param.payload';
 import { PlayerStepModel } from '../../domain/model/player-step.model';
 import { SemaphoreIntervalsModel } from '../../domain/model/semaphore-intervals.model';
 import { SemaphoreState } from '../../domain/model/semaphore-state.enum';
-import { SavePlayerUsecase } from '../../domain/usecases/player/save-player.usecase';
-import { WalkPlayerUsecase } from '../../domain/usecases/player/walk-player.usecase';
-import { StartSemaphoreUsecase } from '../../domain/usecases/semaphore/start-semaphore.usecase';
+import { SavePlayerUsecase } from '../../domain/usecases/player/save-player/save-player.usecase';
+import { WalkPlayerUsecase } from '../../domain/usecases/player/walk-player/walk-player.usecase';
+import { CalculateLightIntervalsUsecase } from '../../domain/usecases/semaphore/calculate-light-intervals/calculate-light-intervals.usecase';
 import { MusicService } from '../../services/music/music.service';
 import { IPlayController } from './play-controller.interface';
 
@@ -23,7 +23,7 @@ export class PlayControllerService implements IPlayController {
     private semaphoreService: ISemaphore,
     private savePlayerUsecase: SavePlayerUsecase,
     private walkPlayerUsecase: WalkPlayerUsecase,
-    private startSemaphoreUsecase: StartSemaphoreUsecase,
+    private startSemaphoreUsecase: CalculateLightIntervalsUsecase,
     private musicService: MusicService
   ) {
     this.refreshSemaphoreIntervals();

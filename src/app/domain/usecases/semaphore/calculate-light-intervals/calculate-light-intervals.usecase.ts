@@ -1,10 +1,10 @@
-import { Usecase } from '../../interfaces/usecase.interface';
-import { Param } from '../../model/param.payload';
-import { SemaphoreIntervalsModel } from '../../model/semaphore-intervals.model';
+import { Usecase } from '../../../interfaces/usecase.interface';
+import { Param } from '../../../model/param.payload';
+import { SemaphoreIntervalsModel } from '../../../model/semaphore-intervals.model';
 
 const RED_LIGHT_INTERVAL_IN_MILLISECONDS = 3000;
 
-export class StartSemaphoreUsecase implements Usecase<Param<number>, SemaphoreIntervalsModel> {
+export class CalculateLightIntervalsUsecase implements Usecase<Param<number>, SemaphoreIntervalsModel> {
   public execute(score: Param<number>): SemaphoreIntervalsModel {
     return this.getSemaphoreIntervals(score.payload);
   }
