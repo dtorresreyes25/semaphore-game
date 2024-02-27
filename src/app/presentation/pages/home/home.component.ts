@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { IHomeController } from '../../../controllers/home-controller/home-controller.interface';
 import { FormFieldProps } from '../../shared/form-input/form-input.component';
@@ -15,7 +16,10 @@ export class HomeComponent implements OnInit {
   public formProps!: FormFieldProps;
   public headerProps!: HeaderProps;
 
-  public constructor(private homeController: IHomeController) {}
+  public constructor(
+    private router: Router,
+    private homeController: IHomeController
+  ) {}
 
   ngOnInit(): void {
     this.setFormProps();
@@ -41,15 +45,17 @@ export class HomeComponent implements OnInit {
     this.headerProps = {
       label: 'Ranking',
       icon: 'leaderboard',
-      action: this.handleOnNavigateToRankingPage,
+      action: this.navigateToRankingPage,
     };
   };
 
-  public handleOnNavigateToRankingPage(): void {}
+  public navigateToRankingPage = (): void => {
+    this.router.navigate(['ranking']);
+  };
 
-  public handleJoinClick(): void {
+  public handleJoinClick = (): void => {
     if (this.playerName.valid) {
       this.homeController.joinPlayer(this.playerName.value);
     }
-  }
+  };
 }

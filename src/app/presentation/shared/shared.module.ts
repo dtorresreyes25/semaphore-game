@@ -11,9 +11,10 @@ import { ButtonComponent } from './button/button.component';
 import { FormInputComponent } from './form-input/form-input.component';
 import { GameComponent } from './game/game.component';
 import { HeaderComponent } from './header/header.component';
+import { RankingListComponent } from './ranking-list/ranking-list.component';
 
 @NgModule({
-  declarations: [ButtonComponent, FormInputComponent, HeaderComponent, GameComponent],
+  declarations: [ButtonComponent, FormInputComponent, HeaderComponent, GameComponent, RankingListComponent],
   imports: [
     CommonModule,
     MatFormField,
@@ -26,6 +27,6 @@ import { HeaderComponent } from './header/header.component';
     MatToolbar,
     MatIconButton,
   ],
-  exports: [ButtonComponent, FormInputComponent, HeaderComponent, GameComponent],
+  exports: [ButtonComponent, FormInputComponent, HeaderComponent, GameComponent, RankingListComponent],
 })
 export class SharedModule {}

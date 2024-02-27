@@ -6,14 +6,14 @@ import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle } 
 import { MatIcon } from '@angular/material/icon';
 
 import { SharedModule } from '../../shared/shared.module';
-import { HomeComponent } from './home.component';
-import { HomeRoutingModule } from './home-routing.module';
+import { RankingComponent } from './ranking.component';
+import { RankingRoutingModule } from './ranking-routing.module';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [RankingComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule,
+    RankingRoutingModule,
     ReactiveFormsModule,
     SharedModule,
     MatCardHeader,
@@ -26,4 +26,4 @@ import { HomeRoutingModule } from './home-routing.module';
     MatButton,
   ],
 })
-export class HomeModule {}
+export class RankingModule {}

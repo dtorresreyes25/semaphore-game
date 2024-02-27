@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'play',
     loadChildren: () => import('./play/play.module').then(m => m.PlayModule),
   },
+  {
+    path: 'ranking',
+    loadChildren: () => import('./ranking/ranking.module').then(m => m.RankingModule),
+  },
 ];
 
 @NgModule({

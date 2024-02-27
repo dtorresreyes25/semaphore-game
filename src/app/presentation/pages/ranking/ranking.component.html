@@ -1,0 +1,11 @@
+<!--TOOLBAR-->
+<section class="home-toolbar">
+  <app-header [props]="headerProps" />
+</section>
+<!--/TOOLBAR-->
+
+<!--RANKING-LIST-->
+<section class="ranking-list">
+  <app-ranking-list [rankings]="rankingList$ | async"></app-ranking-list>
+</section>
+<!--/RANKING-LIST-->

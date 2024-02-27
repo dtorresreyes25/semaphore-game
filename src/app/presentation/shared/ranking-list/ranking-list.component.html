@@ -1,0 +1,18 @@
+<section class="ranking">
+  <!--  HEADER-->
+  <h2 class="ranking-header">Rankings</h2>
+  <!--/HEADER-->
+
+  <!--RANKING-->
+  <ul class="ranking-list">
+    <li class="ranking-item" *ngFor="let rank of rankings">
+      <div class="ranking-rank">
+        <mat-icon class="ranking-star">star</mat-icon>
+        <span>{{ rank.name }}</span>
+      </div>
+
+      <span>{{ rank.maxScore }}</span>
+    </li>
+  </ul>
+  <!--/RANKING-->
+</section>
